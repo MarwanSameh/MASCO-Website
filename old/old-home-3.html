@@ -1,0 +1,949 @@
+<!DOCTYPE html><!--  Last Published: Wed Dec 23 2020 13:01:27 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="5fbe977c3f79635788a14ac6" data-wf-site="5ec78fc24d807cbdf9de7665">
+<head>
+  <meta charset="utf-8">
+  <title>MASCO</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/components.css" rel="stylesheet" type="text/css">
+  <link href="../css/masco.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Inconsolata:400,700","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Rubik:300,300italic,regular,italic,500,500italic,700,700italic,900,900italic","Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic","Playfair Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic","Playfair Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <!-- <style>
+.main-slider, .horizontal-scrolling-section{
+  background-size: 25vw 100vw;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+</style>  -->
+  <style>
+.swiper-container {
+overflow: hidden;
+}
+.swiper-slide {
+width: 320px;
+}
+.swiper-container-coverflow .swiper-wrapper{
+    -ms-perspective:1200px
+}
+.swiper-container-3d{
+    -webkit-perspective:1200px;
+    perspective:1200px
+}
+.swiper-container-3d .swiper-cube-shadow,.swiper-container-3d .swiper-slide,.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top,.swiper-container-3d .swiper-wrapper{
+    -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d
+}
+.swiper-container-3d .swiper-slide-shadow-bottom,.swiper-container-3d .swiper-slide-shadow-left,.swiper-container-3d .swiper-slide-shadow-right,.swiper-container-3d .swiper-slide-shadow-top{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:10
+}
+.swiper-container-3d .swiper-slide-shadow-left{
+    background-image:-webkit-gradient(linear,right top,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+    background-image:-webkit-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:-o-linear-gradient(right,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0))
+}
+.swiper-container-3d .swiper-slide-shadow-right{
+    background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+    background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:-o-linear-gradient(left,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0))
+}
+.swiper-container-3d .swiper-slide-shadow-top{
+    background-image:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+    background-image:-webkit-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:-o-linear-gradient(bottom,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0))
+}
+.swiper-container-3d .swiper-slide-shadow-bottom{
+    background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.5)),to(rgba(0,0,0,0)));
+    background-image:-webkit-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:-o-linear-gradient(top,rgba(0,0,0,.5),rgba(0,0,0,0));
+    background-image:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0))
+}
+.swiper-container-horizontal>.swiper-pagination-bullets,.swiper-pagination-custom,.swiper-pagination-fraction{
+    bottom:10px;
+    left:0;
+    width:100%
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    transform:translateX(-50%);
+    white-space:nowrap
+}
+.swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{
+    -webkit-transition:.2s left,.2s -webkit-transform;
+    transition:.2s left,.2s -webkit-transform;
+    -o-transition:.2s transform,.2s left;
+    transition:.2s transform,.2s left;
+    transition:.2s transform,.2s left,.2s -webkit-transform
+}
+.swiper-container-horizontal.swiper-container-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{
+    -webkit-transition:.2s right,.2s -webkit-transform;
+    transition:.2s right,.2s -webkit-transform;
+    -o-transition:.2s transform,.2s right;
+    transition:.2s transform,.2s right;
+    transition:.2s transform,.2s right,.2s -webkit-transform
+}
+</style>
+</head>
+<body class="body">
+  <div data-w-id="8519b0c3-c99e-0474-e7c3-c4bb9a60b048" data-animation-type="lottie" data-src="../documents/2840-diamond.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="0" class="page-loader"></div>
+  <div class="menu-left">
+    <div data-w-id="cf92b614-43a1-ebc5-b0aa-3bb53db84504" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ecd5554e9caec674f639332/5ecd5555bc83f2516ea232f0_lf30_editor_XLPk4g.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="4" data-duration="0" class="menu"></div>
+    <div class="w-embed">
+      <style>
+.menu-left {mix-blend-mode: difference;}
+</style>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="left-menu-wrapper"><img src="../images/Layer-4.png" alt="" class="image-25">
+      <div class="menu-links">
+        <a href="../old/old-home-3.html" data-w-id="af9e6dc2-62d3-0680-2e91-28f3e6cb4a6c" aria-current="page" class="link w--current">Home</a>
+        <a data-w-id="af9e6dc2-62d3-0680-2e91-28f3e6cb4a6e" href="../old/group.html" class="link">Group</a>
+        <a data-w-id="af9e6dc2-62d3-0680-2e91-28f3e6cb4a70" href="#" class="link">Business Nodes</a>
+        <a data-w-id="af9e6dc2-62d3-0680-2e91-28f3e6cb4a72" href="../old/why-masco.html" class="link">Why MASCO</a>
+        <a data-w-id="3bc11f36-c5cc-b3a6-38a7-f80be1abd361" href="../old/media.html" class="link">Media</a>
+        <a data-w-id="2eed5ceb-5ef5-8687-9cb9-6c0847938a2c" href="../old/sustainability.html" class="link">Sustainability</a>
+      </div>
+      <div class="social-media-wrapper">
+        <a href="https://www.facebook.com/mascoksar/" target="_blank" class="social-media-link w-inline-block"><img src="../images/Vector.png" alt=""></a>
+        <a href="https://www.linkedin.com/company/masco-construction" target="_blank" class="w-inline-block"><img src="../images/Vector-1.png" alt="" class="social-media-link"></a>
+        <a href="https://twitter.com/masco_cm" target="_blank" class="w-inline-block"><img src="../images/Vector-2.png" alt="" class="social-media-link"></a>
+      </div>
+    </div>
+    <div class="socials">
+      <div class="div-block-2"></div>
+      <a href="http://facebook.com" target="_blank" class="social-links">Facebook</a>
+      <a href="http://instagram.com" target="_blank" class="social-links">instagram</a>
+      <a href="http://linkedin.com" target="_blank" class="social-links">Linkedin</a>
+    </div>
+    <div class="menu-bg"></div>
+    <div class="sub-pages-wrapper">
+      <div class="home-sub-page">
+        <h1 class="category-heading">Home</h1>
+        <a href="/#intro" class="h4-headline menu-sub-page">Introduction</a>
+        <a href="/#statistics" class="h4-headline menu-sub-page">STATISTICS</a>
+        <a href="/#projects-section" class="h4-headline menu-sub-page">LATEST PROJECTS</a>
+        <a href="/#testimonials-section" class="h4-headline menu-sub-page">TESTimonials</a>
+      </div>
+      <div class="group-sub-page">
+        <h1 class="category-heading">Group</h1>
+        <a href="/group?tab=company" class="h4-headline menu-sub-page">company: story &amp; history</a>
+        <a href="/group?tab=strategy" class="h4-headline menu-sub-page">strategy: goals &amp; innovation</a>
+        <a href="/group?tab=corporate" class="h4-headline menu-sub-page">corporate structure</a>
+      </div>
+      <div class="projects-sub-page">
+        <h1 class="category-heading">Business <br>Nodes</h1>
+        <a href="/business-nodes#contracting" class="h4-headline menu-sub-page">contracting</a>
+        <a href="/business-nodes#trade" class="h4-headline menu-sub-page">trade</a>
+        <a href="/business-nodes#power" class="h4-headline menu-sub-page">power</a>
+        <a href="/business-nodes#manufacturing" class="h4-headline menu-sub-page">manufacturing</a>
+      </div>
+      <div class="why-masco-sub-page">
+        <h1 class="category-heading">Why MASCO</h1>
+        <a href="/why-masco?tab=expertise" class="h4-headline menu-sub-page">expertise</a>
+        <a href="/why-masco?tab=impact" class="h4-headline menu-sub-page">masco&#x27;s impact</a>
+        <a href="/why-masco?tab=careers" class="h4-headline menu-sub-page">careers</a>
+      </div>
+      <div class="media-sub-page">
+        <h1 class="category-heading">Media</h1>
+        <a href="/media#press" class="h4-headline menu-sub-page">press</a>
+        <a href="/media#photo-gallery" class="h4-headline menu-sub-page">photo gallery</a>
+        <a href="/media#video-gallery" class="h4-headline menu-sub-page">video gallery</a>
+      </div>
+      <div class="sustainability-sub-page">
+        <h1 class="category-heading">Sustainability</h1>
+        <a href="/sustainability#green" class="h4-headline menu-sub-page">green energy</a>
+        <a href="/sustainability#resource" class="h4-headline menu-sub-page">resource management</a>
+        <a href="/sustainability#human" class="h4-headline menu-sub-page">human development</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero">
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navbar w-nav">
+      <div class="nav-bar">
+        <div class="div-block-15"></div>
+        <a href="../old/old-home-3.html" aria-current="page" class="brand w-nav-brand w--current">
+          <div class="nav-logo"></div>
+        </a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div data-poster-url="https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-poster-00001.jpg" data-video-urls="https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-transcode.mp4,https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video w-background-video w-background-video-atom"><video autoplay="" loop="" style="background-image:url(&quot;https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+          <source src="https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-transcode.mp4" data-wf-ignore="true">
+          <source src="https://uploads-ssl.webflow.com/5ec78fc24d807cbdf9de7665/5ef9e2ee2684213981058b04_Export 10-transcode.webm" data-wf-ignore="true">
+        </video></div>
+      <div class="loading-fader-div">
+        <div class="hero-overlay-wrapper">
+          <h1 class="h7-headline hero-title">towards a future<br>of mankind</h1><img src="../images/Layer-3.png" width="245.5" alt="" class="hero-logo">
+          <h1 class="h7-headline hero-title non-est">established<br>1984</h1>
+          <h1 class="h7-headline hero-title est">EST.<br>1984</h1>
+        </div>
+      </div>
+      <div data-w-id="1a5c12ee-0c97-3ce3-7e01-3564d9d1ff82" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8f2e316b3c5_Scroll%20Cue.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="2" data-duration="0" class="scroll-cue"></div>
+    </div>
+  </div>
+  <div class="main-container-2">
+    <div class="section-sticky__outer-wrap">
+      <div class="section-sticky">
+        <div class="section-sticky__wrap section-sticky__wrap-progress">
+          <div class="section-triggers section-triggers__scroll-down">
+            <div id="s-main_1" class="section-trigger section-trigger__1"></div>
+            <div id="s-main_2" class="section-trigger section-trigger__2 _1-end"></div>
+            <div id="s-main_2" class="section-trigger section-trigger__2"></div>
+            <div id="s-main_3" class="section-trigger section-trigger__3 _2-end"></div>
+            <div id="s-main_3" class="section-trigger section-trigger__3"></div>
+            <div id="s-main_4" class="section-trigger section-trigger__4 _3-end"></div>
+            <div id="s-main_4" class="section-trigger section-trigger__4"></div>
+          </div>
+          <div class="wrap__sticky sticky sticky-5">
+            <div class="wrap _w-custom w60-60">
+              <div class="wrap-block__inner-fw top">
+                <a href="../old/old-home-3.html" aria-current="page" class="w-inline-block w--current"><img src="../images/Layer-4.png" alt=""></a>
+                <div class="dynamic-section__wrap">
+                  <div class="dynamic-number__wrap">
+                    <div class="div-block-16"></div>
+                    <div class="dynamic-text dt-number placeholder">0</div>
+                    <div class="dynamic-number__inner-wrap dynamic-number__track">
+                      <div class="dynamic-text dt-number">01</div>
+                      <div class="dynamic-text dt-number">02</div>
+                      <div class="dynamic-text dt-number">03</div>
+                      <div class="dynamic-text dt-number">04</div>
+                    </div>
+                  </div>
+                  <div class="dynamic-text__wrap">
+                    <div class="dynamic-number__inner-wrap">
+                      <div class="dynamic-text">STATISTICS</div>
+                      <div class="dynamic-text">PROJECTS</div>
+                      <div class="dynamic-text">SERVICE RANGE</div>
+                      <div class="dynamic-text">TESTIMONIALS</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrap-block__inner-fw inner-fw__bottom">
+                <div class="stepper-wrap">
+                  <div class="step-block step-block__1">
+                    <div class="step-block__text-title text-title_1">Introduction</div>
+                    <div class="step-block__progress-bar">
+                      <div data-w-id="52104e25-acb5-89db-dca3-63121bf4e99b" style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="step-block__progress-bar-inner progress-bar__1"></div>
+                    </div>
+                  </div>
+                  <div class="step-block step-block__2">
+                    <div class="step-block__text-title text-title_2">Statistics</div>
+                    <div class="step-block__progress-bar">
+                      <div data-w-id="52104e25-acb5-89db-dca3-63121bf4e9a0" style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="step-block__progress-bar-inner progress-bar__2"></div>
+                    </div>
+                  </div>
+                  <div class="step-block step-block__3">
+                    <div class="step-block__text-title text-title_3">Projects Overview</div>
+                    <div class="step-block__progress-bar">
+                      <div data-w-id="52104e25-acb5-89db-dca3-63121bf4e9a5" style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="step-block__progress-bar-inner progress-bar__3"></div>
+                    </div>
+                  </div>
+                  <div class="step-block step-block__4">
+                    <div class="step-block__text-title text-title_4">Testimonials</div>
+                    <div class="step-block__progress-bar">
+                      <div data-w-id="52104e25-acb5-89db-dca3-63121bf4e9aa" style="-webkit-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-100%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="step-block__progress-bar-inner progress-bar__4"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-embed">
+            <style>
+.sticky {
+position: -webkit-sticky !important;
+position: sticky !important;
+}
+</style>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gridlines">
+      <div class="grid-vertical-1"></div>
+      <div class="grid-vertical-1 _2"></div>
+      <div class="grid-vertical-1 _3"></div>
+      <div class="grid-vertical-1 _4"></div>
+    </div>
+    <div class="main-slider">
+      <div data-w-id="9880b333-e4b6-6c47-3146-a4076d13576c" class="introduction-section">
+        <div class="section">
+          <div class="w-layout-grid grid-4">
+            <div id="w-node-c03c0f9da3bd-88a14ac6" class="categories-img-1">
+              <h1 class="h4-headline">CONTRACTING</h1>
+            </div>
+            <div id="w-node-3f20dfac1f74-88a14ac6" class="categories-img-2">
+              <h1 class="h4-headline">POWER</h1>
+            </div>
+            <div id="w-node-fe18b6620134-88a14ac6" class="categories-img-3">
+              <h1 class="h4-headline">TRADE</h1>
+            </div>
+            <div id="w-node-345a1ccf583b-88a14ac6" class="categories-img-4">
+              <h1 class="h4-headline">MANUFACTURING</h1>
+            </div>
+          </div>
+        </div>
+        <div id="intro" data-w-id="71cc0023-948f-1a2b-4724-f7157942d548" class="story-section-1 problems-page">
+          <div data-w-id="fa0c4de5-c225-5a40-1c3d-8e29e6db9222" data-animation-type="lottie" data-src="../documents/Bridge-2.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="lottie-animation-3"></div>
+          <div class="title-wrapper problem-page">
+            <div class="wrapper-parallax-content left-right">
+              <div class="wrapper-left-text">
+                <h1 data-w-id="71cc0023-948f-1a2b-4724-f7157942d54c" class="heading-8"><strong>FROM Paper sketchs to flying bridges</strong></h1>
+                <p class="standard-text smaller-width">MASCO Group prides itself on being inspired and motivated by the prosperity of people and building communities.<br><br>Our grand team of designers and committed workers, MASCO Group is constantly developing innovative projects that enable clients to exceed all expectations and deliver unique works of art.<br><br>By striving to establish and deliver top notch projects, MASCO Group has remained loyal to the benefit of its direct clients and their customers.</p>
+              </div>
+              <div class="wrapper-right-image"><img src="../images/person-holding-black-pen-1109541.jpg" srcset="../images/person-holding-black-pen-1109541-p-1080.jpeg 1080w, ../images/person-holding-black-pen-1109541-p-1600.jpeg 1600w, ../images/person-holding-black-pen-1109541-p-2000.jpeg 2000w, ../images/person-holding-black-pen-1109541-p-2600.jpeg 2600w, ../images/person-holding-black-pen-1109541-p-3200.jpeg 3200w, ../images/person-holding-black-pen-1109541.jpg 3400w" sizes="(max-width: 479px) 90vw, (max-width: 991px) 80vw, (max-width: 1439px) 35vw, 28vw" alt="" class="image-31"></div>
+            </div>
+            <div class="wrapper-parallax-content">
+              <div class="wrapper-left-text">
+                <h1 data-w-id="bf89c206-bf14-cb4f-3c9e-bfb0cad56cb1" class="heading-8"><strong>COMPANY SNAPSHOT</strong></h1>
+                <p class="standard-text smaller-width">MASCO Group is proud to be one of the pioneering Conglomerates based in Saudi Arabia. By serving more than 10 million customers on a day-to-day basis in services that range from Construction projects to various extensive Business nodes that include:<br>‍<br>- Trade<br>- Real Estate Development<br>- Manufacturing/Construction of Highways, Roads, Water Stations<br>- Electrotechnical Works<br>- Renewable Energy and Electricity Stations<br>- Water treatment Plants<br>- IT<br><br><br>MASCO Group has focused on maintaining a clear, honest, and incredibly versatile vision, which is often reflected in our choice of investments. We constantly combine Innovative Investments with World Class Expertise to deliver superior solutions to any and every project we take on.  We are ultimately guided by our goal and mission to become the leading  Public Private Partnership Platform of choice to help secure the best possible opportunities in our communities.<br>‍<br>Taking on the challenges which others might shy away from, MASCO Group has truly improved its customers’ experience by opting only for the highest-grade material, premium machinery and equipment, and mustering up a team of talented employees and advanced technologies.<br><br>By never losing sight of our company values,  we constantly strive to operate ethically and efficiently to deliver projects that meet our standards and exceed expectations.<br><br>We offer several Programs to our partners, including subcontracting opportunities and internal financing of machinery, in order to support and give young talents the chance to realize their full potential and get started on their entrepreneurial journey.<br>‍</p>
+              </div>
+              <div class="wrapper-right-image"><img src="../images/conference-room-768441_1920.jpg" srcset="../images/conference-room-768441_1920-p-500.jpeg 500w, ../images/conference-room-768441_1920-p-1080.jpeg 1080w, ../images/conference-room-768441_1920-p-1600.jpeg 1600w, ../images/conference-room-768441_1920.jpg 1920w" sizes="(max-width: 479px) 90vw, (max-width: 991px) 80vw, (max-width: 1439px) 70vw, 56vw" alt="" class="image-31"></div>
+            </div>
+            <div class="wrapper-parallax-content">
+              <div class="wrapper-left-text">
+                <h1 data-w-id="dda84ba9-63e2-5376-78e8-43c60c0b1ebc" class="heading-8"><strong>Founded</strong></h1>
+                <p class="standard-text smaller-width">MASCO Group was  founded in 1970 and came into existence through the hard work of  the true visionary, M. Alswailam.<br><br>Our founder has started his long journey as a Truck Driver based in Qassem Village in KSA.<br><br>Through endless determination, persistency and commitment to deliver a better world, Mr. Alswailam was able to secure the trust of both the Saudi Governments as well as multiple Equipment Suppliers, which gave him the chance to unlock his full potential and create the MASCO Empire.<br><br>With its team of calibers, MASCO has withstood many global crisis and has always come out stronger, meeting every single one of its commitments throughout the past 50 years.<br>‍</p>
+              </div>
+              <div class="wrapper-right-image"><img src="../images/tower-5277451_1920.jpg" srcset="../images/tower-5277451_1920-p-500.jpeg 500w, ../images/tower-5277451_1920-p-1080.jpeg 1080w, ../images/tower-5277451_1920-p-1600.jpeg 1600w, ../images/tower-5277451_1920.jpg 1920w" sizes="(max-width: 479px) 90vw, (max-width: 991px) 80vw, (max-width: 1439px) 70vw, 56vw" alt="" class="image-31"></div>
+            </div>
+            <div class="wrapper-parallax-content">
+              <div class="wrapper-left-text">
+                <h1 data-w-id="6f52c568-7ff3-21b2-5371-88bae126e9c3" class="heading-8"><strong>Headquarters</strong></h1>
+                <p class="standard-text smaller-width">As the company grew strong and proud along the years, we have managed to relocate our Head Office from the town of Qassim to the grand city of Riyadh, Saudi Arabia.  <br><br>Alongside our Head Office, MASCO Group has managed to secure its presence in 21 other locations spread across the Kingdom of Saudi Arabia, serving more than 10 million clients daily.<br>‍</p>
+              </div>
+              <div class="wrapper-right-image"><img src="../images/nelson-mandela-bridge-2-1236037.jpg" srcset="../images/nelson-mandela-bridge-2-1236037-p-500.jpeg 500w, ../images/nelson-mandela-bridge-2-1236037-p-1080.jpeg 1080w, ../images/nelson-mandela-bridge-2-1236037.jpg 1280w" sizes="(max-width: 479px) 90vw, (max-width: 991px) 80vw, (max-width: 1439px) 70vw, 56vw" alt="" class="image-31"></div>
+            </div>
+          </div>
+          <div class="problem-diagram">
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d54f" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8396516b3a9_lf30_editor_MAprsT.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="1" data-duration="1" class="problem-top-lottie"></div>
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d550" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f885bb16b3b0_Customers.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="0.9" data-duration="1" class="problem-top-lottie"></div>
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d551" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8ecce16b3b2_Website.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="1" data-duration="1" class="problem-top-lottie"></div>
+          </div>
+          <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d552" class="content-2 problem-page">
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d553" class="problem-wrapper right">
+              <div class="problem">
+                <div class="problem-text">
+                  <h1 class="heading-8"><strong>Growth</strong></h1>
+                  <p class="standard-text">MASCO is a leading conglomerate in Saudi Arabia; with construction and earth moving projects as its core business, yet its value lives in providing a better living for different communities. It is the leading institution for unprecedented projects that change lives forever. We are serving more than 10 million customers each and every day through our extensively human centered design and construction only to build better experiences for the communities we aim to help and support. We will keep living up to our expectations.</p>
+                </div>
+                <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d55a" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8396516b3a9_lf30_editor_MAprsT.json" data-loop="1" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="1" data-duration="2" class="problem-lottie"></div>
+              </div>
+            </div>
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d55b" class="problem-wrapper left">
+              <div class="problem left">
+                <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d55d" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f885bb16b3b0_Customers.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="0.9" data-duration="0" class="problem-lottie left"></div>
+                <div class="problem-text left">
+                  <h1 class="heading-8"><strong>Community</strong></h1>
+                  <p class="standard-text left">Strategically we pinpoint challenging projects which everyone else would stay away from. We thrive on challenges as it’s the only way we could actually help communities. While others stay away from big challenges to help keep their image all because they fear failure, we make sure to tackle those challenges like no one does, because that’s the only way we could help all communities in our reach. </p>
+                </div>
+              </div>
+            </div>
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d563" class="problem-wrapper right">
+              <div class="problem">
+                <div class="problem-text">
+                  <h1 class="heading-8"><strong>Prosperity</strong></h1>
+                  <p class="standard-text">We offer a very wide variety of services from construction, water treatment, electrotechnical works, renewable energy, IT, real estate, hotels and tourism among so countless other services to help communities prosper. We thrive by accepting our social responsibility towards the communities we aim to help and only aim to take projects that change lives to the better. We have one big message; build for human prosperity.</p>
+                </div>
+                <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d56a" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8ecce16b3b2_Website.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="1" data-duration="0" class="problem-lottie"></div>
+              </div>
+            </div>
+          </div>
+          <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d56b" class="summary">
+            <div data-w-id="71cc0023-948f-1a2b-4724-f7157942d56c" class="wrapper-parallax-content">
+              <h1 class="heading-8"><strong>We’ve Got a Process that Backs Up Our Aims</strong></h1>
+              <p class="standard-text">We’re not using shiny words and meaningless mottos while we keep our processes flow for each project as it goes. We take on big challenges and huge projects to help communities because we have a strong process to back up what we say. We kept trying and perfecting our process to reach the state where we’re sure that it will keep working time and time again. Yet we’re no stubborn minded individuals, we keep perfecting and adjusting our process as the challenges of our ever-growing world keep getting more challenging.</p>
+              <div class="button-wrapper">
+                <a href="#process-section" class="button on-white w-button">LEARN MORE.<br></a>
+                <a href="#" class="button on-white secondary w-button">LEARN MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="Process" class="story-section-2 process">
+          <div id="process-section" class="title-wrapper process">
+            <div class="wrapper-parallax-content-2">
+              <h1 data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc02" class="heading-8"><strong>A Process that is Unique Like No Other</strong></h1>
+              <p class="standard-text">Don’t expect our process to be like that of your everyday construction firm. We are no regular firm. Our process is mainly aimed towards growing communities and tackling big challenges.</p>
+            </div>
+          </div>
+          <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc04" class="content-2 process">
+            <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc05" class="process-row">
+              <div class="process-part-block">
+                <div class="process-text left">
+                  <h1 class="heading-8"><strong>Studying the Social Impact</strong></h1>
+                  <p class="standard-text">We don’t take on any projects that have no social impact. We don’t do things for money and fame, but we aim to make a change. We start any project by studying the social impact that it would have on the society, then we strategize how we can make this possible.</p>
+                </div>
+              </div>
+              <div class="process-part-dot-animation">
+                <div class="process-part-dot"></div>
+              </div>
+            </div>
+            <div class="process-row right">
+              <div class="process-part-dot-animation">
+                <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc10" class="process-part-dot"></div>
+              </div>
+              <div class="process-part-block right">
+                <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc12" class="process-text right">
+                  <h1 class="heading-8"><strong>Studying the Project Scope and Objectives</strong></h1>
+                  <p class="standard-text">We then go through our client’s objectives from the project. We want to know what they want to help solve for the society. Then we take those objectives and create a plan which scopes down the projects to a group of milestones that we need to achieve.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-part-block">
+                <div class="process-text left">
+                  <h1 class="heading-8"><strong>Designing and Engineering a Unique Solution</strong></h1>
+                  <p class="standard-text">Our strategists, designers, engineers, marketeers, among many others work tirelessly together pulling off what could never be done and make a clear plan, a great design, a previously impossible structure and turn imagination and ideas into tangible, applicable plans and designs.</p>
+                </div>
+              </div>
+              <div class="process-part-dot-animation">
+                <div class="process-part-dot"></div>
+              </div>
+            </div>
+            <div class="process-row right">
+              <div class="process-part-block right">
+                <div class="process-text right">
+                  <h1 class="heading-8"><strong>Laying Down the Basis</strong></h1>
+                  <p class="standard-text">We then take the plans and designs of our team and give it to a talented team of engineers and construction workers to turn the 2D plan into the basis of the structure. Laying down a strong basis and infrastructure to make sure that whatever we build later is based on a strong base.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-row right">
+              <div class="process-part-block right">
+                <div class="process-text right">
+                  <h1 class="heading-8"><strong>Building the Solution</strong></h1>
+                  <p class="standard-text">We turn the infrastructure, the basic structure and start building the solution. All of the hard work becomes reality at this point. Structures are built, grids are laid, and everything turns into a beautiful reality. One that we strive to keep on improving.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-row right">
+              <div class="process-part-block right">
+                <div class="process-text right">
+                  <h1 class="heading-8"><strong>Studying the Social Impact</strong></h1>
+                  <p class="standard-text">All of the hard work of months and years of work come to this point. Study how our solution aided to solve people’s everyday problems. From bridges and roads like the roads in King Abdullah Sports City, to mega railways like the super-fast Haramain Railway, we only aim to make a difference.</p>
+                </div>
+              </div>
+            </div>
+            <div class="line-lottie-animation-wrapper">
+              <div class="lottie-sticky-wrapper">
+                <div class="lottie-mask">
+                  <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc38" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/5ee2d9e84fe3294da0ef6578/5ee2d9e9c709f8014116b3b6_Line%20Animation%20New.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="svg" data-default-duration="6" data-duration="0" class="lottie-animation"></div>
+                </div>
+              </div>
+            </div>
+            <div class="content-bg"></div>
+          </div>
+          <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc3a" class="process-spacer"></div>
+          <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc3b" class="summary-2 process">
+            <div data-w-id="fc0ad115-ce21-8557-bbef-be10575bfc3c" class="wrapper-parallax-content-2">
+              <h1 class="heading-8"><strong>We Have the Proof</strong></h1>
+              <p class="standard-text">We have what proves that what we say and the process we follow works. Numbers never lie, and we’re running a huge number of projects with even huger investments in human wellbeing.</p>
+              <div class="button-wrapper-2">
+                <a href="#statistics" class="button w-button">SEE THE STATISTICS.</a>
+                <a href="#" class="button secondary w-button">SHOW ME MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="statistics" data-w-id="3080faf3-057e-8b2f-ee3e-7c478ce11b6c" class="statistics-section">
+        <div class="container-3">
+          <div data-w-id="3df24108-b434-c5c3-c0d2-3eaedb6eb820" style="-webkit-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="title-wrap">
+            <h2 class="h2-headline margin-up">statistics</h2>
+            <div class="heading-div">
+              <h1 class="h4-headline padding-up">LET THE NUMBERS TALK<br>ABOUT OUR SUCCESS</h1>
+              <div class="body-2 padding-up">The projects we ran can talk about themselves. They are huge projects that were live changing for many individuals. Yet many people doubt it when it’s just the project that’s mentioned, so we’ve got statistics to back up all what we say.</div>
+            </div>
+          </div>
+          <div data-w-id="3df24108-b434-c5c3-c0d2-3eaedb6eb80e" style="-webkit-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="feature-block">
+            <div class="feature-card">
+              <div class="counter-text-block">
+                <h3 class="counter-prefix">+</h3>
+                <h3 class="counter-2">20,000</h3>
+              </div>
+              <div class="detail-text">EMPLOYED TO DATE</div>
+            </div>
+            <div class="line-break-large"></div>
+            <div class="feature-card">
+              <div class="counter-text-block">
+                <h3 class="counter-prefix">+</h3>
+                <h3 class="counter-2">1,700</h3>
+              </div>
+              <div class="detail-text">SATISFIED CLIENTS</div>
+            </div>
+            <div class="line-break-large"></div>
+            <div class="feature-card">
+              <div class="counter-text-block">
+                <h3 class="counter-prefix">+</h3>
+                <h3 class="counter-2">13,000</h3>
+              </div>
+              <div class="detail-text">PROJECTS COMPLETED</div>
+            </div>
+          </div>
+          <div data-w-id="85121490-6de9-7d2b-f0eb-cd212c626d8d" style="-webkit-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 55PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="feature-block-2">
+            <div class="feature-card">
+              <div class="counter-text-block">
+                <h3 class="counter-prefix">$</h3>
+                <h3 class="counter-2">6,000,000,000</h3>
+              </div>
+              <div class="detail-text">VALUE OF PROJECTS</div>
+            </div>
+          </div>
+        </div>
+        <section id="statistic-section" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9357" class="horizontal-scrolling-section">
+          <div class="horizontal-scrolling-wrapper">
+            <div class="statistics-heading-div">
+              <h1 class="h2-headline">STATISTICS</h1>
+            </div>
+            <div class="hor-grid"></div>
+            <div class="statistics-horizontal-cards-container">
+              <div class="content small"><img src="../images/Employed-to-Date.png" height="" width="280" srcset="../images/Employed-to-Date-p-500.png 500w, ../images/Employed-to-Date.png 560w" sizes="100vw" alt="" class="image-8">
+                <h3 data-w-id="0c65d07d-575c-2105-27c1-1774d58337eb" style="opacity:0" class="counter h3-headline">20,000</h3>
+              </div>
+              <div class="content small"><img src="../images/Satisfied-Clients.png" height="" width="280" srcset="../images/Merely-Satisfied-Clients-p-500.png 500w, ../images/Satisfied-Clients.png 560w" sizes="100vw" alt="" class="image-8">
+                <h3 data-w-id="6fb0f4fb-a63e-2ebf-d765-117e33dbe825" style="opacity:0" class="counter h3-headline">17,000</h3>
+              </div>
+              <div class="content small"><img src="../images/Projects-Completed.png" height="" width="280" srcset="../images/Projects-Completed-p-500.png 500w, ../images/Projects-Completed.png 560w" sizes="100vw" alt="" class="image-8">
+                <h3 data-w-id="9a1d00a3-749c-a180-a1bc-5c1d1a71c19e" style="opacity:0" class="counter h3-headline">13,000</h3>
+              </div>
+              <div class="content wide"><img src="../images/Value-of-Projects.png" height="" width="870" srcset="../images/Value-of-Projects-p-500.png 500w, ../images/Value-of-Projects-p-800.png 800w, ../images/Value-of-Projects-p-1080.png 1080w, ../images/Value-of-Projects-p-1600.png 1600w, ../images/Value-of-Projects.png 1740w" sizes="100vw" alt="" class="image-8"></div>
+              <div class="content small"><img src="../images/Projects-Completed.png" width="280" height="200" srcset="../images/Projects-Completed-p-500.png 500w, ../images/Projects-Completed.png 560w" sizes="100vw" alt="" class="image-8">
+                <h3 data-w-id="104f0465-32b3-97bc-8996-a9c96b1bf280" style="opacity:0" class="counter h3-headline">20,000</h3>
+              </div>
+              <div class="content wide"><img src="../images/Value-of-Projects.png" height="" width="870" srcset="../images/Value-of-Projects-p-500.png 500w, ../images/Value-of-Projects-p-800.png 800w, ../images/Value-of-Projects-p-1080.png 1080w, ../images/Value-of-Projects-p-1600.png 1600w, ../images/Value-of-Projects.png 1740w" sizes="100vw" alt="" class="image-8"></div>
+            </div>
+            <div class="statistics-description-div">
+              <div class="heading-div">
+                <h1 data-w-id="abb1489e-f00d-138d-9ae2-f57754bc936f" class="h4-headline">LET THE NUMBERS TALK<br>ABOUT OUR SUCCESS</h1>
+                <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9373" class="body-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio feugiat venenatis, ultrices donec. Id aliquam magna sed velit lobortis. Tristique tempus, gravida lacus, pellentesque nam est semper dignissim ultricies.</div>
+              </div>
+              <div class="masco-gem-div">
+                <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9376" data-animation-type="lottie" data-src="../documents/Diamond-Animation-1.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="lottie-animation-2"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="projects-section" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc937a" class="card-section">
+        <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc937b" class="hero-scroll-container">
+          <div class="sticky-container">
+            <div class="hor-grid _3"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>‍</div>
+            <div class="hor-grid _3 _4"></div>
+            <div id="card-1" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc937e" class="hero-bullet-points _1 _2-columns">
+              <div class="projects-column-1">
+                <p data-w-id="abb1489e-f00d-138d-9ae2-f57754bc937f" class="h2-headline">PROJECTS</p>
+                <h2 class="h4-headline padding-up">RUNNING ONES OF THE HUGEST PROJECTS IN SAUDI ARABIA</h2>
+                <p class="body-2 padding-up">While running a huge number of projects and in light of our commitment to a better society and world at large, we succeeded in delivering a lot of value and helped solve huge challenges that were previously perceived as impossible.</p>
+              </div>
+              <div class="projects-column-2"></div>
+            </div>
+            <div id="card-2" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9385" class="hero-bullet-points _2">
+              <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9386" class="card">
+                <div class="bg-wrapper">
+                  <p class="body-2 hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                  <h2 class="h4-headline project">haramain high speed railway</h2>
+                </div>
+              </div>
+            </div>
+            <div id="card-3" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc938b" class="hero-bullet-points _2 _3">
+              <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc938c" class="card">
+                <div class="bg-wrapper">
+                  <h2 class="h4-headline project">infrastructure &amp; site development of hail university</h2>
+                  <p class="body-2 hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                </div>
+              </div>
+            </div>
+            <div id="card-4" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9391" class="hero-bullet-points _2 _4">
+              <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc9392" class="card">
+                <div class="bg-wrapper">
+                  <p class="body-2 hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                  <h2 class="h4-headline project">hyatt regency hotel (al swailem tower)</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="testimonials-section" data-w-id="abb1489e-f00d-138d-9ae2-f57754bc944b" class="testimonials-section">
+        <div class="testimonials-headings-div">
+          <div class="testimonials-text-div">
+            <h1 class="h2-headline">Testimonials</h1>
+            <h1 class="h4-headline text-half-screen padding-up">OUR CLIENTS HAVE BEEN MORE THAN HAPPY WITH OUR WORK</h1>
+            <p class="body-2 text-half-screen padding-up">We’re not only working for self-satisfaction; we work for the client’s and societies’ satisfaction first and foremost. And just like everything else, we have our proof.</p>
+          </div>
+        </div>
+        <div class="hor-grid _3 _4 _5"></div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="picture t-1"></div>
+              <div class="detail">
+                <a href="#" class="title-link w-inline-block">
+                  <h3 class="heding-4-centered">NEOM CITY</h3>
+                </a>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="picture t-2"></div>
+              <div class="detail">
+                <h3 class="heading-2 centered">HARMAIN HIGH SPEED RAILWAY</h3>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="picture t-3"></div>
+              <div class="detail">
+                <h3 class="heding-4-centered">DAMMAM CITY CONSTRUCTIONS</h3>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="picture t-4"></div>
+              <div class="detail">
+                <h3 class="heding-4-centered">NEOM CITY</h3>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="picture t-5"></div>
+              <div class="detail">
+                <h3 class="heding-4-centered">HARAMAIN HIGH SPEED RAILWAY</h3>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="picture t-6"></div>
+              <div class="detail">
+                <h3 class="heding-4-centered">DAMMAM CITY CONSTRUCTIONS</h3>
+                <div class="sub-title">Description</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="centered-container-2 w-container">
+          <div class="cards-grid-container">
+            <div id="w-node-f57754bc9456-88a14ac6">
+              <div class="cards-image-mask"><img src="../images/Rectangle-81.png" alt="" class="cards-image"></div>
+              <h3 class="customer-name">NEOM CITY</h3>
+              <p class="customer-testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+            </div>
+            <div id="w-node-f57754bc945d-88a14ac6">
+              <div class="cards-image-mask"><img src="../images/Rectangle-82.png" alt="" class="cards-image"></div>
+              <h3 id="w-node-f57754bc9460-88a14ac6" class="customer-name">DAMMAM CITY CONSTRUCTIONS</h3>
+              <p id="w-node-f57754bc9462-88a14ac6" class="customer-testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+            </div>
+            <div id="w-node-f57754bc9464-88a14ac6">
+              <div class="cards-image-mask"><img src="../images/Rectangle-81.png" alt="" class="cards-image"></div>
+              <h3 id="w-node-f57754bc9467-88a14ac6" class="customer-name">HARAMAIN HIGH SPEED RAILWAY</h3>
+              <p id="w-node-f57754bc9469-88a14ac6" class="customer-testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="video-section" class="video-section">
+        <div class="video-div">
+          <div class="video-div-wrapper">
+            <div class="card">
+              <div class="bg-wrapper">
+                <h1 class="h4-headline centered">interested to see <br>more of our work?</h1>
+              </div>
+            </div>
+            <a href="/projects" class="button on-white secondary vide-div-btn w-button">LEARN MORE ABOUT OUR PROJECTS</a>
+          </div>
+        </div>
+      </section>
+      <section id="service-range-section" class="services-section">
+        <div class="services-div">
+          <div class="services-heading">
+            <h1 class="h2-headline">SERVICE RANGE</h1>
+            <h2 class="h4-headline text-half-screen">SPANNING A WIDE RANGE OF SERVICES</h2>
+            <p class="body-2 text-half-screen">As MASCO has deep roots in history, as well as being based in construction, the company had the potential to branch into a wide range of services. The company now has 7 different branches which offer 10+ unique service types to its clients. This also helps make MASCO’s work process as seamless as possible by internally managing a lot of the processes which would’ve been handled by other firms in many other cases.</p>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1">
+            <div class="flex-container-type-1 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="abb1489e-f00d-138d-9ae2-f57754bc939f" data-animation-type="lottie" data-src="../documents/Bulldozer-3-1.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">CONTRACTING AND INDUSTRIAL</h2>
+                <p class="body-2 service-range">MASCO I&amp;C division was primarily to carry out in-house business subcontracts, in both building and waste and water treatments plants. Gradually, it became an independent profit center of the group encountered by opportunities outside the MASCO&#x27;s business. In 2006, A separate company was formed by the name (Control System Technology Company)- Systech, to be the Electro-mechanical arm of the group.<br><br>Systech areas of specially involved Electrical &amp; Mechanical of Building, water technology, Electrical &amp; Instrumentation, Electrical Panel Board manufacturing, Industrial Control Solutions, Building Management System and SCADA. Systech is one of the Pioneer company specialized in electrical and industrial control manufacturing solution provides for oil and gas Industries.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1 feature-type-2">
+            <div class="flex-container-type-1 flex-container-type-2 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="08504bb5-20de-a3f5-b543-7e3a0445453f" data-animation-type="lottie" data-src="../documents/Crane-2.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">BUILDING</h2>
+                <p class="body-2 service-range">Building hotels, hospitals, colleges is MASCO&#x27;s specialty with all what involved in architectural, structural finishing and interiors designs works as well as Electromechanical and BMS that is all done with most advanced management tools.<br><br>In addition, MASCO has the high caliber management team and a  skilled workforce  capable of Residential, Commercial and Institutional Buildings.<br></p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1">
+            <div class="flex-container-type-1 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="a2c7cf42-51f4-e1d7-53f7-f4e81f0ceb93" data-animation-type="lottie" data-src="../documents/Pipe-Animation-1.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">INFRASTRUCTURE AND WATER</h2>
+                <p class="body-2 service-range">The Infrastructures &amp; Water Projects Department in MASCO combine most of expertise and resources needed to give an upscale with sophisticated professional industrial and residential infrastructure projects. Different systems are needed to build a solid infrastructure projects such as water, sewage transmitting networks, storage tanks, water &amp; waste water treatment plants as well as pumping station, streets lighting, electrical substations, power &amp; signals control system, earthmoving as well as rock cutting or explosion, asphalt roads and streets with curbstones, tiles, signboards, street signals, and irrigation and planting.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1 feature-type-2">
+            <div class="flex-container-type-1 flex-container-type-2 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="1d27c4c4-5985-20ea-0e67-b368d7405951" data-animation-type="lottie" data-src="../documents/Wrench.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">OPERATIONS, MAINTENANCE AND OUTSOURCING</h2>
+                <p class="body-2 service-range">MASCO has a long and strong experience in road and highway maintenance, MASCO meanwhile is also having water, wastewater and pumping station O&amp;M projects.<br><br>MASCO&#x27;s Vision for O&amp;M activities is to expand it and tackle fields of oil and gas industrial projects. MASCO has recently diversified in the Outsourcing Services offering a group of services in the field of Manpower supply and operations and maintenance service for Public buildings and facilities, Military buildings and facilities, University buildings and facilities, Medical and non-medical maintenance, Airports and Seaports, Banks &amp; Financial Institutions .<br><br>We also provide high caliber staff at all levels viz; Admin staff, Technical &amp; specialized staff and Managerial level staff.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1">
+            <div class="flex-container-type-1 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="273ad3a9-ae95-be21-e8d7-a83033fe1cc6" data-animation-type="lottie" data-src="../documents/Concrete-Mixer.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">CONCRETE BATCHING PLANTS</h2>
+                <p class="body-2 service-range">MASCO by its nature of business has a strong relation with aggregate, sand, cement which form the most essential sources of producing concrete, had been integrated to establish series of concrete batching plants in different locations across the Kingdom of Saudi Arabia. MASCO recently has expanded its production of concrete from supplying its own business to producing commercial quantities for the construction Market.<br><br>MASCO believes that it is the right time to go to market taking into consideration the huge demand of concrete across the Kingdom both for private and public projects.<br><br>Meanwhile, MASCO has its new facility operating in Jizan to supply mega projects that are lunched around the region. Other successfully built plants has been operating  in Riyadh, Jizan, Dawadmi and Jeddah.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1 feature-type-2">
+            <div class="flex-container-type-1 flex-container-type-2 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="d9c14ce0-03f1-15ac-a3c1-132096c6de3f" data-animation-type="lottie" data-src="../documents/Truck-Animation-2.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">TRANSPORTATION AND SHIPMENT</h2>
+                <p class="body-2 service-range">MASCO&#x27;s Transportation Division Owns and operate a large fleet of trailers. All trailers are brand new model 2006 &amp; 2007 series. Transportation Division supports MASCO&#x27;s contracting projects by different applications. These supply  required raw materials such as embankment material, cement, crushed aggregate and Bitumen. In addition, Transportation Division operate as an independent business unit which generate revenue by doing business with other customers.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+          <div class="feature-type-1">
+            <div class="flex-container-type-1 w-container">
+              <div class="_3d-object-div">
+                <div data-w-id="6d39a2db-5312-34dc-9295-3f3ea2691465" data-animation-type="lottie" data-src="../documents/bridge.json" data-loop="0" data-direction="1" data-autoplay="0" data-is-ix2-target="1" data-renderer="canvas" data-default-duration="3.033333333333333" data-duration="0" class="_3d-object-lottie"></div>
+              </div>
+              <div class="feature-text-div">
+                <h2 class="h4-headline feature-heading">HIGHWAYS ROADS AND BRIDGES</h2>
+                <p class="body-2 service-range">This division of MASCO was the first to start, going back to 1984 as early as the company started.<br><br>MASCO continues to invest heavily in this sector, through massive expansion in terms of  its human resources, their equipments and fleet of more than 1000 different pieces of equipment and plants to serve the roads and bridges construction industry.<br><br>MASCO has also successfully extended their roots in railroad construction industry, since 2009.</p>
+              </div>
+            </div>
+            <div class="hor-grid _5"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="footer-form-div">
+    <footer id="footer" class="footer">
+      <div class="container w-container">
+        <div class="footer-flex-container">
+          <div class="horizontal-sectors">
+            <a href="../index.html" class="footer-logo-link w-inline-block"><img src="../images/Layer-4-2.png" alt="" class="footer-image"></a>
+            <div class="footer-categories">
+              <div class="category-wrapper">
+                <a href="../index.html" class="w-inline-block">
+                  <h2 class="footer-heading">Home</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="/#Intro" class="footer-link">Introduction</a>
+                  </li>
+                  <li>
+                    <a href="/#Nodes" class="footer-link">Business Nodes</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="category-wrapper">
+                <a href="../group.html" class="w-inline-block">
+                  <h2 class="footer-heading">Group</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="../group-company.html" class="footer-link">Company</a>
+                  </li>
+                  <li>
+                    <a href="../group-strategy.html" class="footer-link">Strategy</a>
+                  </li>
+                  <li>
+                    <a href="../group-corporate-structure.html" class="footer-link">Corporate Structure</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="category-wrapper">
+                <a href="../business-nodes.html" class="w-inline-block">
+                  <h2 class="footer-heading">Business Nodes</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="../business-nodes-contracting.html" class="footer-link">Construction</a>
+                  </li>
+                  <li>
+                    <a href="../business-nodes-trade.html" class="footer-link">Trade</a>
+                  </li>
+                  <li>
+                    <a href="../business-nodes-power.html" class="footer-link">Power</a>
+                  </li>
+                  <li>
+                    <a href="../business-nodes-manufacturing.html" class="footer-link">Manufacturing</a>
+                  </li>
+                  <li>
+                    <a href="../business-nodes-transportation.html" class="footer-link">Human Resources</a>
+                  </li>
+                  <li>
+                    <a href="../business-nodes-finance.html" class="footer-link">Real Estate</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="category-wrapper hidden">
+                <a href="../why-masco.html" class="w-inline-block">
+                  <h2 class="footer-heading">Why MASCO</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="../why-masco-expertise.html" class="footer-link">Expertise</a>
+                  </li>
+                  <li>
+                    <a href="../why-masco-impact.html" class="footer-link">Masco&#x27;s Impact</a>
+                  </li>
+                  <li>
+                    <a href="../why-masco-careers.html" class="footer-link">Careers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="category-wrapper">
+                <a href="../media.html" class="w-inline-block">
+                  <h2 class="footer-heading">Media</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="/media#photo-gallery" class="footer-link">Photo Gallery</a>
+                  </li>
+                  <li>
+                    <a href="/media#video-gallery" class="footer-link">Video Gallery</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="category-wrapper">
+                <a href="../sustainability.html" class="w-inline-block">
+                  <h2 class="footer-heading">Sustainability</h2>
+                </a>
+                <ul role="list" class="w-list-unstyled">
+                  <li>
+                    <a href="/sustainability#green" class="footer-link">Green Energy</a>
+                  </li>
+                  <li>
+                    <a href="/sustainability#resource" class="footer-link">Resource Management</a>
+                  </li>
+                  <li>
+                    <a href="/sustainability#human" class="footer-link">Human Development</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="form-section">
+      <div class="w-container">
+        <div class="form-block w-form">
+          <form id="email-form" name="email-form" data-name="Email Form" class="form"><label for="name-2" class="field-label white">Name</label><input type="text" class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Name" id="name-2"><label for="email-2" class="white">Email Address</label><input type="email" class="text-field-2 w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="Email" id="email-2" required=""><label for="Phone-2" class="white">Phone</label><input type="tel" class="text-field-2 w-input" maxlength="256" name="Phone-2" data-name="Phone 2" placeholder="Phone" id="Phone-2"><input type="submit" value="Submit" data-wait="Please wait..." class="w-button"></form>
+          <div class="w-form-done">
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-block white">Copyright © 2020 MASCO. All rights reserved.</div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5ec78fc24d807cbdf9de7665" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="../js/masco.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script>
+ function getParam(name) {
+     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+     results = regex.exec(location.search);
+     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+ }
+ var Webflow = Webflow || [];
+ Webflow.push(function () {
+     var tabName = getParam('tab');
+     if (tabName) $('.' + tabName).triggerHandler('click');
+ });
+ </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.min.js"></script>
+  <script>
+var swiper = new Swiper(".swiper-container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 20,
+    stretch: 0,
+    depth: 350,
+    modifier: 1,
+    slideShadows: true
+  }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
+  <script>
+$('.counter-2').counterUp({
+  delay: 10,
+  time: 1000
+});
+$('.counter-2').addClass('animated fadeInDownBig');
+$('h3').addClass('animated fadeIn');
+</script>
+  <script>
+$('.counter').counterUp({
+  delay: 10,
+  time: 1000
+});
+$('.counter').addClass('animated fadeInDownBig');
+$('h3').addClass('animated fadeIn');
+</script>
+</body>
+</html>
